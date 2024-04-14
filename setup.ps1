@@ -41,8 +41,7 @@ Write-Host @"
 
 "@
 Write-Host "Checking for Core Packages..."
-choco install git
-choco install 7zip
+choco install git 7zip -y
 
 
 Write-Host @"
@@ -52,16 +51,20 @@ Write-Host @"
 "@
 $input = Read-Host "Install Core Tools? y/n"
 If($input -eq "y"){
-    choco install cmder
-    choco install neovim
-    choco install obsidian
+    choco install cmder neovim obsidian cmake fd make mingw python ripgrep -y
+}
+Else {
+    Write-Host "Skipping..."
+}
 
-    choco install cmake
-    choco install fd
-    choco install make
-    choco install mingw
-    choco install python
-    choco install ripgrep
+Write-Host @"
+
+-------------Personal Core---------------
+
+"@
+$input = Read-Host "Install Personal Core? y/n"
+If($input -eq "y"){
+    choco install firefox spotify discord -y
 }
 Else {
     Write-Host "Skipping..."
