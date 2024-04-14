@@ -1,4 +1,6 @@
 # Chukka Environment Setup Bootstrapper
+#
+$dir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
 Write-Host @"
 
@@ -23,7 +25,7 @@ Write-Host @"
 If(!(Test-Path -Path "$env:ProgramData\Chocolatey")) {
     Write-Host "Chocolatey not detected.`r`nInstalling Chocolatey..."
 
-    & ".\chocolatey-install.ps1"
+    & "$dir\chocolatey-install.ps1"
 
     # Emulate refreshenv for the current PowerShell session
     $env:ChocolateyInstall = Convert-Path "$((Get-Command choco).Path)\..\.." 
