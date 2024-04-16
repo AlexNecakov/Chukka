@@ -71,3 +71,41 @@ If($input -eq "y"){
 Else {
     Write-Host "Skipping..."
 }
+
+Write-Host @"
+
+-------------Heavy Tools-----------------
+
+"@
+$input = Read-Host "Install Heavy Tools? y/n?"
+If($input -eq "y"){
+& "$dirChoco\\heavyTools.ps1"
+}
+Else {
+    Write-Host "Skipping..."
+}
+
+Write-Host @"
+
+---------------Media Tools---------------
+
+"@
+$input = Read-Host "Install Media Tools? y/n?"
+If($input -eq "y"){
+& "$dirChoco\\mediaTools.ps1"
+}
+Else {
+    Write-Host "Skipping..."
+}
+Write-Host @"
+
+---------------Gaming----=---------------
+
+"@
+$input = Read-Host "Install Gaming Suite? y/n?"
+If($input -eq "y"){
+& "$dirChoco\\games.ps1"
+}
+Else {
+    Write-Host "Skipping..."
+}
