@@ -109,3 +109,17 @@ If($input -eq "y"){
 Else {
     Write-Host "Skipping..."
 }
+
+Write-Host @"
+
+-------------NeoVim Configure------------
+
+"@
+$input = Read-Host "Configure NeoVim? y/n?"
+If($input -eq "y"){
+git clone https:\\github.com\AlexNecakov\VimConfig $env:userprofile\\AppData\\Local\\nvim
+}
+Else {
+    Write-Host "Skipping..."
+}
+
