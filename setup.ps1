@@ -53,7 +53,7 @@ Write-Host @"
 "@
 $input = Read-Host "Install Core Tools? y/n"
 If($input -eq "y"){
-    choco install cmder neovim obsidian cmake fd make mingw python ripgrep -y
+& "$dirChoco\\coreTools.ps1"
 }
 Else {
     Write-Host "Skipping..."
@@ -66,7 +66,7 @@ Write-Host @"
 "@
 $input = Read-Host "Install Personal Core? y/n"
 If($input -eq "y"){
-    choco install firefox spotify discord -y
+& "$dirChoco\\corePersonal.ps1"
 }
 Else {
     Write-Host "Skipping..."
